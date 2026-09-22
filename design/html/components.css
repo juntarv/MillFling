@@ -1,0 +1,64 @@
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+html,body { width:390px; height:844px; overflow:hidden; background:var(--blue-900); }
+body { font-family:var(--font-body); color:var(--ink); }
+.screen { position:relative; width:390px; height:844px; overflow:hidden; }
+
+/* ---------- world backdrops ---------- */
+.sky {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(120% 60% at 78% 14%, rgba(255,222,106,.55) 0%, rgba(255,192,31,0) 58%),
+    linear-gradient(180deg, var(--blue-950) 0%, var(--blue-900) 22%, var(--blue-700) 52%, var(--blue-500) 74%, var(--blue-300) 92%);
+}
+.sky-flat { position:absolute; inset:0; background:linear-gradient(180deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-500) 100%); }
+.grain { position:absolute; inset:0; opacity:.18; mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(255,255,255,.7) 1px, transparent 1px);
+  background-size:4px 4px; }
+.vignette { position:absolute; inset:0; box-shadow:inset 0 0 120px rgba(6,31,92,.55); pointer-events:none; }
+
+/* ---------- typography ---------- */
+.t-hero { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-hero); line-height:.86; letter-spacing:var(--tr-hero); }
+.t-display { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-display); line-height:.94; letter-spacing:-.01em; }
+.t-title { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-title); line-height:1.02; letter-spacing:var(--tr-title); }
+.t-body { font-weight:var(--w-mid); font-size:var(--fs-body); line-height:1.35; }
+.t-small { font-weight:var(--w-bold); font-size:var(--fs-small); line-height:1.25; }
+.t-micro { font-weight:var(--w-bold); font-size:var(--fs-micro); letter-spacing:var(--tr-micro); text-transform:uppercase; }
+.t-num { font-family:var(--font-display); font-weight:var(--w-thin); letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+.on-sky { color:var(--linen); text-shadow:var(--shadow-text); }
+
+/* ---------- folk surfaces ---------- */
+.linen-card {
+  background:linear-gradient(180deg, var(--linen) 0%, #FBEDD3 100%);
+  border:var(--stroke); border-radius:var(--r-md);
+  box-shadow:var(--shadow-hard), var(--shadow-soft);
+  position:relative;
+}
+.linen-card::after{ content:""; position:absolute; inset:5px; border-radius:12px;
+  border:1.5px dashed rgba(14,35,80,.22); pointer-events:none; }
+.plank {
+  background:linear-gradient(180deg,#FFD873 0%, var(--sun-500) 46%, var(--sun-600) 100%);
+  border:var(--stroke); border-radius:10px;
+  box-shadow:0 7px 0 #A8650A, var(--shadow-soft);
+}
+.plate-blue {
+  background:linear-gradient(180deg, var(--blue-700) 0%, var(--blue-900) 100%);
+  border:var(--stroke); border-radius:var(--r-md);
+  box-shadow:0 6px 0 rgba(6,31,92,.75), var(--shadow-soft);
+  color:var(--linen);
+}
+.frost { background:rgba(255,246,228,.90); backdrop-filter:blur(6px); border:var(--stroke); border-radius:var(--r-md); }
+.pill-sky { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:var(--r-pill);
+  background:rgba(6,31,92,.62); border:2px solid rgba(255,246,228,.5); color:var(--linen); }
+
+/* ---------- cross-stitch ornament ---------- */
+.stitch-band { height:16px; width:100%;
+  background-image:
+    repeating-linear-gradient(45deg, var(--sun-500) 0 4px, transparent 4px 8px),
+    repeating-linear-gradient(-45deg, var(--stitch-red) 0 4px, transparent 4px 8px);
+  background-size:16px 16px; opacity:.95; }
+.stitch-rule { height:6px; width:100%;
+  background-image:repeating-linear-gradient(90deg, var(--stitch-red) 0 6px, transparent 6px 12px); opacity:.85; }
+
+.row { display:flex; align-items:center; }
+.col { display:flex; flex-direction:column; }
+.abs { position:absolute; }

@@ -1,0 +1,688 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09646EFEEB0FF5F91D28ED86 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654915BB7D1B83E9722F8E0 /* PhysicsCategory.swift */; };
+		12B0348CB94AF3785F2C5629 /* FieldGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BED73AA77B222C15B5EFF /* FieldGuideView.swift */; };
+		13885E442E59582786BEB9B7 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3499C32431EAA5C603A21A /* Haptics.swift */; };
+		16CBB00DBA5BD5EF48A8457F /* DailySowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115FBF0780AAD2AAC063A0CE /* DailySowingView.swift */; };
+		19A420C02DD224532C590A03 /* RunTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE78CEE8D2DE7A10632985 /* RunTracker.swift */; };
+		240864EA0B109A50B40D6099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731FC44E8DFAD93A8F420596 /* Assets.xcassets */; };
+		265FC974112B9EE1A06E69EF /* FieldGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3ABF703E5BEC5AC8BBB00 /* FieldGuide.swift */; };
+		2A574386A63CD0A92E9C5F3A /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36B6DA7F0811145A1CC5930 /* Motion.swift */; };
+		2AECE25F426FEC2AECB20EEA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155F19DC165369D8AE0FA927 /* SettingsView.swift */; };
+		2CD66D205E9F3F72CDE2541E /* RibbonCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E285BFBA19259CD3B2DCE /* RibbonCatalog.swift */; };
+		313B54848A8022099B94486F /* ChaffField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4796A8E6062ACDA9AA07DAF3 /* ChaffField.swift */; };
+		376342E3097E6450F1CE0711 /* ScoreRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A1F633AEEF0CD6B7004CC7 /* ScoreRules.swift */; };
+		395B97C64736C77F329FC6EE /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = E90A09DE336888C2DCA9A21F /* AppsFlyerLib */; };
+		3BA27A213494109D69E8F3DF /* SceneColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE4197FF72D9CDB6EB2377 /* SceneColors.swift */; };
+		3E88E3F07801F4E7CEE14991 /* SeedCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB72D5CBB3CA7790E7222A /* SeedCatalog.swift */; };
+		3FF055D632C97FDB50AD9D50 /* SeededRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FADCC9D4F15BC27150FAE53 /* SeededRandom.swift */; };
+		46A41F15BDB19C9CE1B226FA /* DemoScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F10241325C63F50BC4C3B6 /* DemoScript.swift */; };
+		474673C7569FA36B1A134AEF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9B03F450F1162E6689DFD /* OnboardingView.swift */; };
+		4A128E03860E655469BEBA72 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC3A797B35AD48E55D4876 /* HomeView.swift */; };
+		500621F52BA96235B8F3CD50 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026612732B6BA4BBFA32C55 /* Components.swift */; };
+		538260CEC1D101AC6AA6843E /* SeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC77BA7202D03324FC08C2C /* SeedDetailView.swift */; };
+		55A427A7CB059D99511F6B7A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279748490C7D4AF0533EAC8E /* GameScene.swift */; };
+		5F70C7517541C67027323547 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797C9F5D06AD274E207A8B3 /* FlightModel.swift */; };
+		68447C1267204C087728D16A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9937BFDC8B907111CCB56856 /* GameViewModel.swift */; };
+		79DF059F2CD878093E32B57A /* MillHillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D0AD7728EBAE4DE9401E6 /* MillHillView.swift */; };
+		7A568C9643F930C9F779D520 /* PlotNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC3E5E3B59FFB071F94384 /* PlotNode.swift */; };
+		7D7DF458E87C2F02D9CB8A77 /* HarvestChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDE259BF9ADB94A3793E0E /* HarvestChartsView.swift */; };
+		80CF9FECEC43E88983CE2102 /* FlyerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417AD7F5FB791D47E36F99C /* FlyerNode.swift */; };
+		82399DA0F0D7659FE2C405D3 /* LaunchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE6DF4CB113FF20F8D982B5 /* LaunchOptions.swift */; };
+		8790D297D479B4CF13C669A2 /* ParticlePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E402D70B4640A6EC981A29 /* ParticlePool.swift */; };
+		8BBD87AE9813B2940DD445B8 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30841A6F79B4E2C88A7EA17C /* Regions.swift */; };
+		97D4231BB51C5217C25340A6 /* CartNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ABCDD727A30CDF493767C /* CartNode.swift */; };
+		9D89899AA4AD26CC51C08EF8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5432FFD4863BAA56DACA5F /* SplashView.swift */; };
+		9D9E09FC316F3F3B1FC1F612 /* HarvestReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC8BB627EED24A155334699 /* HarvestReportView.swift */; };
+		A500EC9DF7A6EB15F1526F8D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE369157C3A354208D787A6 /* Theme.swift */; };
+		AB8422254159FF79876B10ED /* PaintShedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD2CBF948348EE8BE8D312 /* PaintShedView.swift */; };
+		B438EC4B2AD38E4D6C50D6BC /* Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B75AD4924034D0504A8771 /* Progression.swift */; };
+		BB29E3F89B819CC192FE69A4 /* FieldMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447595CED729093F4816E4B /* FieldMapView.swift */; };
+		C1525B7AAA22D1A895A9901E /* RibbonWallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F655E95E432ECE40E85694 /* RibbonWallView.swift */; };
+		C4DAD9CFE2239C65A54C8AB0 /* MillNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D9A91DE3CA57E7A5E191A /* MillNode.swift */; };
+		CEF4470B2F484BD60E47E409 /* MillFling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36A5AA7120A322B9ED2CF3E0 /* MillFling.xcdatamodeld */; };
+		CF86AD8CAEC642F985E966E7 /* RegionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7F9EA8E0971C99CCD5B5E /* RegionDetailView.swift */; };
+		D1C30FEB9BA871596F739D07 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484ECC39A0E8EAEBC75DF7F0 /* Charts.swift */; };
+		D21E7C01AB9B570070ED9D33 /* FarmBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0998B9F6B4A3947CCBF99C76 /* FarmBookView.swift */; };
+		D834906FD8EB604D162C0455 /* FarmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B037F57505BBA895098F98C /* FarmStore.swift */; };
+		D96200249326297177985385 /* CrowNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F509D4F49326FF25F21B205 /* CrowNode.swift */; };
+		DE49E82DCCD7D61EBDD0791F /* FieldBriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909BC5F86AD4941ECA3DAFA /* FieldBriefingView.swift */; };
+		DFBAE1995D251C33257A19F7 /* FieldGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C729BE8F6BE3676352E4 /* FieldGeometry.swift */; };
+		E16011F0D3037028717A5882 /* MillFlingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46F36F5DC7CFBFE861FB9D /* MillFlingApp.swift */; };
+		E395A3E7F9ED0A03F4D0A768 /* SeedAlmanacView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A0E42021D5A440632E10DD /* SeedAlmanacView.swift */; };
+		E46F209B7CA83801152F7FE1 /* ScreenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD989BE4D3E876F81BC25561 /* ScreenHeader.swift */; };
+		E98A7C39C73E83D6A1D2C43F /* RibbonEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B4DB57E34CBCF8E0CE681D /* RibbonEvaluator.swift */; };
+		EF0A7DDF00A1FA318B2753FD /* FieldCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45284BC7281CE195590EA6F6 /* FieldCatalog.swift */; };
+		F068ADFC5BD8FC91BE90270B /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74984253DA2E0E7BD1D2CF57 /* PersistenceController.swift */; };
+		F27DD20584B995F2E8BD42F5 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFD0B7850E3116F16A97B00 /* GameState.swift */; };
+		F6788B5CBB5D89ECEB432B57 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 0C59768B33971D21B4132B57 /* OneSignalFramework */; };
+		F92EC902B89ABE2DFA085DB6 /* GameContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EAE55D017F501A3E857A4B /* GameContainerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0654915BB7D1B83E9722F8E0 /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		0998B9F6B4A3947CCBF99C76 /* FarmBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmBookView.swift; sourceTree = "<group>"; };
+		0EBD2CBF948348EE8BE8D312 /* PaintShedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintShedView.swift; sourceTree = "<group>"; };
+		115FBF0780AAD2AAC063A0CE /* DailySowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySowingView.swift; sourceTree = "<group>"; };
+		14FE78CEE8D2DE7A10632985 /* RunTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTracker.swift; sourceTree = "<group>"; };
+		155F19DC165369D8AE0FA927 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1F5432FFD4863BAA56DACA5F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		2447595CED729093F4816E4B /* FieldMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldMapView.swift; sourceTree = "<group>"; };
+		279748490C7D4AF0533EAC8E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		2DE6DF4CB113FF20F8D982B5 /* LaunchOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchOptions.swift; sourceTree = "<group>"; };
+		30841A6F79B4E2C88A7EA17C /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
+		30F10241325C63F50BC4C3B6 /* DemoScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoScript.swift; sourceTree = "<group>"; };
+		387D9A91DE3CA57E7A5E191A /* MillNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MillNode.swift; sourceTree = "<group>"; };
+		38EAE55D017F501A3E857A4B /* GameContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContainerView.swift; sourceTree = "<group>"; };
+		3FADCC9D4F15BC27150FAE53 /* SeededRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeededRandom.swift; sourceTree = "<group>"; };
+		3FFD0B7850E3116F16A97B00 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		41A1F633AEEF0CD6B7004CC7 /* ScoreRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRules.swift; sourceTree = "<group>"; };
+		45284BC7281CE195590EA6F6 /* FieldCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCatalog.swift; sourceTree = "<group>"; };
+		46376E738EF61D38C8CD4EB7 /* MillFling.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MillFling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4796A8E6062ACDA9AA07DAF3 /* ChaffField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaffField.swift; sourceTree = "<group>"; };
+		484ECC39A0E8EAEBC75DF7F0 /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
+		4AC8BB627EED24A155334699 /* HarvestReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestReportView.swift; sourceTree = "<group>"; };
+		4B5D0AD7728EBAE4DE9401E6 /* MillHillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MillHillView.swift; sourceTree = "<group>"; };
+		4CCC3A797B35AD48E55D4876 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4D1BED73AA77B222C15B5EFF /* FieldGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGuideView.swift; sourceTree = "<group>"; };
+		4F509D4F49326FF25F21B205 /* CrowNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowNode.swift; sourceTree = "<group>"; };
+		5026612732B6BA4BBFA32C55 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		5909BC5F86AD4941ECA3DAFA /* FieldBriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldBriefingView.swift; sourceTree = "<group>"; };
+		60EB72D5CBB3CA7790E7222A /* SeedCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedCatalog.swift; sourceTree = "<group>"; };
+		62A0E42021D5A440632E10DD /* SeedAlmanacView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedAlmanacView.swift; sourceTree = "<group>"; };
+		62B1C729BE8F6BE3676352E4 /* FieldGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGeometry.swift; sourceTree = "<group>"; };
+		6BC77BA7202D03324FC08C2C /* SeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDetailView.swift; sourceTree = "<group>"; };
+		731FC44E8DFAD93A8F420596 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74984253DA2E0E7BD1D2CF57 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		7B037F57505BBA895098F98C /* FarmStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmStore.swift; sourceTree = "<group>"; };
+		7CDE4197FF72D9CDB6EB2377 /* SceneColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneColors.swift; sourceTree = "<group>"; };
+		7DFC3E5E3B59FFB071F94384 /* PlotNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotNode.swift; sourceTree = "<group>"; };
+		98B4DB57E34CBCF8E0CE681D /* RibbonEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RibbonEvaluator.swift; sourceTree = "<group>"; };
+		9937BFDC8B907111CCB56856 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		9B2D30021858628E5465F8E3 /* MillFling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MillFling.xcdatamodel; sourceTree = "<group>"; };
+		9FE3ABF703E5BEC5AC8BBB00 /* FieldGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGuide.swift; sourceTree = "<group>"; };
+		A2D7F9EA8E0971C99CCD5B5E /* RegionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionDetailView.swift; sourceTree = "<group>"; };
+		A36B6DA7F0811145A1CC5930 /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
+		A84E285BFBA19259CD3B2DCE /* RibbonCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RibbonCatalog.swift; sourceTree = "<group>"; };
+		B1E402D70B4640A6EC981A29 /* ParticlePool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlePool.swift; sourceTree = "<group>"; };
+		B2F655E95E432ECE40E85694 /* RibbonWallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RibbonWallView.swift; sourceTree = "<group>"; };
+		BFD3FB604112722F43FB1F55 /* MillFling 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MillFling 2.xcdatamodel"; sourceTree = "<group>"; };
+		C7B75AD4924034D0504A8771 /* Progression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progression.swift; sourceTree = "<group>"; };
+		CC3499C32431EAA5C603A21A /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		CD989BE4D3E876F81BC25561 /* ScreenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenHeader.swift; sourceTree = "<group>"; };
+		D2EDE259BF9ADB94A3793E0E /* HarvestChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestChartsView.swift; sourceTree = "<group>"; };
+		DED9B03F450F1162E6689DFD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		ECE369157C3A354208D787A6 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		EF46F36F5DC7CFBFE861FB9D /* MillFlingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MillFlingApp.swift; sourceTree = "<group>"; };
+		F417AD7F5FB791D47E36F99C /* FlyerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerNode.swift; sourceTree = "<group>"; };
+		F43ABCDD727A30CDF493767C /* CartNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartNode.swift; sourceTree = "<group>"; };
+		F797C9F5D06AD274E207A8B3 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D04BFF0781C67EA61A9010D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				395B97C64736C77F329FC6EE /* AppsFlyerLib in Frameworks */,
+				F6788B5CBB5D89ECEB432B57 /* OneSignalFramework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		167580A358CFF5EDD8CBFCFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				115FBF0780AAD2AAC063A0CE /* DailySowingView.swift */,
+				0998B9F6B4A3947CCBF99C76 /* FarmBookView.swift */,
+				5909BC5F86AD4941ECA3DAFA /* FieldBriefingView.swift */,
+				4D1BED73AA77B222C15B5EFF /* FieldGuideView.swift */,
+				2447595CED729093F4816E4B /* FieldMapView.swift */,
+				38EAE55D017F501A3E857A4B /* GameContainerView.swift */,
+				D2EDE259BF9ADB94A3793E0E /* HarvestChartsView.swift */,
+				4AC8BB627EED24A155334699 /* HarvestReportView.swift */,
+				4CCC3A797B35AD48E55D4876 /* HomeView.swift */,
+				4B5D0AD7728EBAE4DE9401E6 /* MillHillView.swift */,
+				DED9B03F450F1162E6689DFD /* OnboardingView.swift */,
+				0EBD2CBF948348EE8BE8D312 /* PaintShedView.swift */,
+				A2D7F9EA8E0971C99CCD5B5E /* RegionDetailView.swift */,
+				B2F655E95E432ECE40E85694 /* RibbonWallView.swift */,
+				CD989BE4D3E876F81BC25561 /* ScreenHeader.swift */,
+				62A0E42021D5A440632E10DD /* SeedAlmanacView.swift */,
+				6BC77BA7202D03324FC08C2C /* SeedDetailView.swift */,
+				155F19DC165369D8AE0FA927 /* SettingsView.swift */,
+				1F5432FFD4863BAA56DACA5F /* SplashView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		28C09E3C13DEDB4CE5946966 /* MillFling */ = {
+			isa = PBXGroup;
+			children = (
+				C74BC3E964BF4915B735A6C7 /* App */,
+				B14E19B1EC7CAE050A468E18 /* Content */,
+				59528A8F13FF9849778E3D3D /* Design */,
+				800FF78CCCA867E8A3FA5972 /* Game */,
+				3C44FE286DA0F2F9F71B0C86 /* Persistence */,
+				2D668547B5EAF8B81844A625 /* Resources */,
+				44099A0B6ECFEAD400846328 /* Support */,
+				167580A358CFF5EDD8CBFCFD /* Views */,
+			);
+			path = MillFling;
+			sourceTree = "<group>";
+		};
+		2D668547B5EAF8B81844A625 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				731FC44E8DFAD93A8F420596 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3926EAEA0E439B3CB41FA6BA /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				30F10241325C63F50BC4C3B6 /* DemoScript.swift */,
+				62B1C729BE8F6BE3676352E4 /* FieldGeometry.swift */,
+				F797C9F5D06AD274E207A8B3 /* FlightModel.swift */,
+				98B4DB57E34CBCF8E0CE681D /* RibbonEvaluator.swift */,
+				14FE78CEE8D2DE7A10632985 /* RunTracker.swift */,
+				41A1F633AEEF0CD6B7004CC7 /* ScoreRules.swift */,
+				3FADCC9D4F15BC27150FAE53 /* SeededRandom.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		3C44FE286DA0F2F9F71B0C86 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				7B037F57505BBA895098F98C /* FarmStore.swift */,
+				74984253DA2E0E7BD1D2CF57 /* PersistenceController.swift */,
+				36A5AA7120A322B9ED2CF3E0 /* MillFling.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		44099A0B6ECFEAD400846328 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CC3499C32431EAA5C603A21A /* Haptics.swift */,
+				2DE6DF4CB113FF20F8D982B5 /* LaunchOptions.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		59528A8F13FF9849778E3D3D /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				484ECC39A0E8EAEBC75DF7F0 /* Charts.swift */,
+				5026612732B6BA4BBFA32C55 /* Components.swift */,
+				A36B6DA7F0811145A1CC5930 /* Motion.swift */,
+				ECE369157C3A354208D787A6 /* Theme.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		756A1D83AAB47E743032EA87 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F43ABCDD727A30CDF493767C /* CartNode.swift */,
+				4796A8E6062ACDA9AA07DAF3 /* ChaffField.swift */,
+				4F509D4F49326FF25F21B205 /* CrowNode.swift */,
+				F417AD7F5FB791D47E36F99C /* FlyerNode.swift */,
+				387D9A91DE3CA57E7A5E191A /* MillNode.swift */,
+				B1E402D70B4640A6EC981A29 /* ParticlePool.swift */,
+				7DFC3E5E3B59FFB071F94384 /* PlotNode.swift */,
+				7CDE4197FF72D9CDB6EB2377 /* SceneColors.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		800FF78CCCA867E8A3FA5972 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				279748490C7D4AF0533EAC8E /* GameScene.swift */,
+				3FFD0B7850E3116F16A97B00 /* GameState.swift */,
+				9937BFDC8B907111CCB56856 /* GameViewModel.swift */,
+				0654915BB7D1B83E9722F8E0 /* PhysicsCategory.swift */,
+				756A1D83AAB47E743032EA87 /* Entities */,
+				3926EAEA0E439B3CB41FA6BA /* Logic */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		8A4F20BB1FBBF0FA733C38C8 = {
+			isa = PBXGroup;
+			children = (
+				28C09E3C13DEDB4CE5946966 /* MillFling */,
+				C848956FA3DA08C934F9D0A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B14E19B1EC7CAE050A468E18 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				45284BC7281CE195590EA6F6 /* FieldCatalog.swift */,
+				9FE3ABF703E5BEC5AC8BBB00 /* FieldGuide.swift */,
+				C7B75AD4924034D0504A8771 /* Progression.swift */,
+				30841A6F79B4E2C88A7EA17C /* Regions.swift */,
+				A84E285BFBA19259CD3B2DCE /* RibbonCatalog.swift */,
+				60EB72D5CBB3CA7790E7222A /* SeedCatalog.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		C74BC3E964BF4915B735A6C7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EF46F36F5DC7CFBFE861FB9D /* MillFlingApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C848956FA3DA08C934F9D0A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46376E738EF61D38C8CD4EB7 /* MillFling.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFCE6AC2CC8C3FB49A27DA07 /* MillFling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA44E2DB12A08586188B9696 /* Build configuration list for PBXNativeTarget "MillFling" */;
+			buildPhases = (
+				C376C2791AC7340D10C62F07 /* Sources */,
+				364BC15433C3F56C13B503FF /* Resources */,
+				D04BFF0781C67EA61A9010D4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MillFling;
+			packageProductDependencies = (
+				E90A09DE336888C2DCA9A21F /* AppsFlyerLib */,
+				0C59768B33971D21B4132B57 /* OneSignalFramework */,
+			);
+			productName = MillFling;
+			productReference = 46376E738EF61D38C8CD4EB7 /* MillFling.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0FAA1A74BD7B99AD12D36A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					EFCE6AC2CC8C3FB49A27DA07 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 84EEDEBFF618F45B333346C3 /* Build configuration list for PBXProject "MillFling" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 8A4F20BB1FBBF0FA733C38C8;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7870C6F10DA8E4153DFE8FE8 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+				C467CC958635BDC82884DD23 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C848956FA3DA08C934F9D0A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFCE6AC2CC8C3FB49A27DA07 /* MillFling */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		364BC15433C3F56C13B503FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240864EA0B109A50B40D6099 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C376C2791AC7340D10C62F07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D4231BB51C5217C25340A6 /* CartNode.swift in Sources */,
+				313B54848A8022099B94486F /* ChaffField.swift in Sources */,
+				D1C30FEB9BA871596F739D07 /* Charts.swift in Sources */,
+				500621F52BA96235B8F3CD50 /* Components.swift in Sources */,
+				D96200249326297177985385 /* CrowNode.swift in Sources */,
+				16CBB00DBA5BD5EF48A8457F /* DailySowingView.swift in Sources */,
+				46A41F15BDB19C9CE1B226FA /* DemoScript.swift in Sources */,
+				D21E7C01AB9B570070ED9D33 /* FarmBookView.swift in Sources */,
+				D834906FD8EB604D162C0455 /* FarmStore.swift in Sources */,
+				DE49E82DCCD7D61EBDD0791F /* FieldBriefingView.swift in Sources */,
+				EF0A7DDF00A1FA318B2753FD /* FieldCatalog.swift in Sources */,
+				DFBAE1995D251C33257A19F7 /* FieldGeometry.swift in Sources */,
+				265FC974112B9EE1A06E69EF /* FieldGuide.swift in Sources */,
+				12B0348CB94AF3785F2C5629 /* FieldGuideView.swift in Sources */,
+				BB29E3F89B819CC192FE69A4 /* FieldMapView.swift in Sources */,
+				5F70C7517541C67027323547 /* FlightModel.swift in Sources */,
+				80CF9FECEC43E88983CE2102 /* FlyerNode.swift in Sources */,
+				F92EC902B89ABE2DFA085DB6 /* GameContainerView.swift in Sources */,
+				55A427A7CB059D99511F6B7A /* GameScene.swift in Sources */,
+				F27DD20584B995F2E8BD42F5 /* GameState.swift in Sources */,
+				68447C1267204C087728D16A /* GameViewModel.swift in Sources */,
+				13885E442E59582786BEB9B7 /* Haptics.swift in Sources */,
+				7D7DF458E87C2F02D9CB8A77 /* HarvestChartsView.swift in Sources */,
+				9D9E09FC316F3F3B1FC1F612 /* HarvestReportView.swift in Sources */,
+				4A128E03860E655469BEBA72 /* HomeView.swift in Sources */,
+				82399DA0F0D7659FE2C405D3 /* LaunchOptions.swift in Sources */,
+				CEF4470B2F484BD60E47E409 /* MillFling.xcdatamodeld in Sources */,
+				E16011F0D3037028717A5882 /* MillFlingApp.swift in Sources */,
+				79DF059F2CD878093E32B57A /* MillHillView.swift in Sources */,
+				C4DAD9CFE2239C65A54C8AB0 /* MillNode.swift in Sources */,
+				2A574386A63CD0A92E9C5F3A /* Motion.swift in Sources */,
+				474673C7569FA36B1A134AEF /* OnboardingView.swift in Sources */,
+				AB8422254159FF79876B10ED /* PaintShedView.swift in Sources */,
+				8790D297D479B4CF13C669A2 /* ParticlePool.swift in Sources */,
+				F068ADFC5BD8FC91BE90270B /* PersistenceController.swift in Sources */,
+				09646EFEEB0FF5F91D28ED86 /* PhysicsCategory.swift in Sources */,
+				7A568C9643F930C9F779D520 /* PlotNode.swift in Sources */,
+				B438EC4B2AD38E4D6C50D6BC /* Progression.swift in Sources */,
+				CF86AD8CAEC642F985E966E7 /* RegionDetailView.swift in Sources */,
+				8BBD87AE9813B2940DD445B8 /* Regions.swift in Sources */,
+				2CD66D205E9F3F72CDE2541E /* RibbonCatalog.swift in Sources */,
+				E98A7C39C73E83D6A1D2C43F /* RibbonEvaluator.swift in Sources */,
+				C1525B7AAA22D1A895A9901E /* RibbonWallView.swift in Sources */,
+				19A420C02DD224532C590A03 /* RunTracker.swift in Sources */,
+				3BA27A213494109D69E8F3DF /* SceneColors.swift in Sources */,
+				376342E3097E6450F1CE0711 /* ScoreRules.swift in Sources */,
+				E46F209B7CA83801152F7FE1 /* ScreenHeader.swift in Sources */,
+				E395A3E7F9ED0A03F4D0A768 /* SeedAlmanacView.swift in Sources */,
+				3E88E3F07801F4E7CEE14991 /* SeedCatalog.swift in Sources */,
+				538260CEC1D101AC6AA6843E /* SeedDetailView.swift in Sources */,
+				3FF055D632C97FDB50AD9D50 /* SeededRandom.swift in Sources */,
+				2AECE25F426FEC2AECB20EEA /* SettingsView.swift in Sources */,
+				9D89899AA4AD26CC51C08EF8 /* SplashView.swift in Sources */,
+				A500EC9DF7A6EB15F1526F8D /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1EF828F3763D7A90A29F3832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/InfoAdditions.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MillFling;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.millfling;
+				PRODUCT_NAME = MillFling;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9669BD304469AF998987470E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AE5DA7157CA5B50C93E55601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C79FFD31DCA4AF46300E4F68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/InfoAdditions.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MillFling;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.millfling;
+				PRODUCT_NAME = MillFling;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84EEDEBFF618F45B333346C3 /* Build configuration list for PBXProject "MillFling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9669BD304469AF998987470E /* Debug */,
+				AE5DA7157CA5B50C93E55601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DA44E2DB12A08586188B9696 /* Build configuration list for PBXNativeTarget "MillFling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EF828F3763D7A90A29F3832 /* Debug */,
+				C79FFD31DCA4AF46300E4F68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7870C6F10DA8E4153DFE8FE8 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.15.0;
+			};
+		};
+		C467CC958635BDC82884DD23 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C59768B33971D21B4132B57 /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C467CC958635BDC82884DD23 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignalFramework;
+		};
+		E90A09DE336888C2DCA9A21F /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7870C6F10DA8E4153DFE8FE8 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		36A5AA7120A322B9ED2CF3E0 /* MillFling.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BFD3FB604112722F43FB1F55 /* MillFling 2.xcdatamodel */,
+				9B2D30021858628E5465F8E3 /* MillFling.xcdatamodel */,
+			);
+			currentVersion = BFD3FB604112722F43FB1F55 /* MillFling 2.xcdatamodel */;
+			path = MillFling.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A0FAA1A74BD7B99AD12D36A0 /* Project object */;
+}

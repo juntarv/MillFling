@@ -1,0 +1,9 @@
+build/
+*.zip
+.claude_stderr.log
+.DS_Store
+refs/
+refs_style/
+refs_fix/
+qa/
+design_import/

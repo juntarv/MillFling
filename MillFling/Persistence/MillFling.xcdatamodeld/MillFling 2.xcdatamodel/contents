@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModels="YES">
+    <entity name="PreferenceEntity" representedClassName="PreferenceEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="hapticsOn" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="animationsOn" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="firstLaunchCompleted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="selectedSeedKey" optional="YES" attributeType="String"/>
+        <attribute name="lastFieldIndex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="selectedPaintKey" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="FieldProgressEntity" representedClassName="FieldProgressEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fieldIndex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="regionKey" optional="YES" attributeType="String"/>
+        <attribute name="isUnlocked" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="stars" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bestScore" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bestPodsLeft" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bestStreak" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="attempts" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="completedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastPlayedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="bestTrueSows" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="RunRecordEntity" representedClassName="RunRecordEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fieldIndex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="regionKey" optional="YES" attributeType="String"/>
+        <attribute name="score" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="plotsSown" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="plotsRequired" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="podsUsed" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="podsLeft" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bestStreak" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trueSows" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="seedsLost" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="seedKey" optional="YES" attributeType="String"/>
+        <attribute name="durationSeconds" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="outcome" optional="YES" attributeType="String"/>
+        <attribute name="starsEarned" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dailyKey" optional="YES" attributeType="String"/>
+        <attribute name="bushels" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="goldenSown" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="SeedEntity" representedClassName="SeedEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="key" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="lore" optional="YES" attributeType="String"/>
+        <attribute name="unlockField" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isUnlocked" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="mass" attributeType="Double" defaultValueString="0.5" usesScalarValueType="YES"/>
+        <attribute name="seedsPerBurst" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="drift" attributeType="Double" defaultValueString="0.5" usesScalarValueType="YES"/>
+        <attribute name="bloomBonus" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="timesUsed" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="plotsSown" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sortIndex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bestScore" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="RibbonEntity" representedClassName="RibbonEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="key" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="goal" attributeType="Integer 32" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="progress" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isEarned" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="earnedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sortIndex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="FarmStatsEntity" representedClassName="FarmStatsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="totalSeedsSown" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalPodsFlung" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalPlotsSown" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalTrueSows" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bestStreak" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalStars" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fieldsSown" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalRuns" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastPlayedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="bushels" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rank" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="dailyStreak" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bestDailyStreak" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastDailyKey" optional="YES" attributeType="String"/>
+        <attribute name="dailyCompleted" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="goldenSown" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalWins" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="DailyRunEntity" representedClassName="DailyRunEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dayKey" optional="YES" attributeType="String"/>
+        <attribute name="attempts" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="completed" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="bestScore" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="stars" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="completedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="seedKey" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MillPaintEntity" representedClassName="MillPaintEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="key" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="colorHex" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="unlockRank" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="isUnlocked" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="unlockedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sortIndex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+</model>

@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>MillFling — pause</title><style>
+/* MillFling — design tokens
+   Art direction: Embroidered Sunfield — vivid folk-textile countryside at high noon.
+   ONE dominant colour (cobalt blue) + ONE accent (sunflower yellow).
+   BANNED in this system: Inter/Roboto as the type voice, purple-indigo gradients on white,
+   rows of identical rounded cards, near-black + neon "premium dark",
+   and ivory/cream serif-editorial "safe paper" minimalism. */
+
+:root {
+  /* ---- Dominant: cobalt sky ---- */
+  --blue-950: #061F5C;
+  --blue-900: #0B3C9E;
+  --blue-700: #1763DE;   /* DOMINANT */
+  --blue-500: #3D86F0;
+  --blue-300: #8FC0FF;
+  --blue-100: #D6E8FF;
+
+  /* ---- Accent: sunflower ---- */
+  --sun-600: #F09A0C;
+  --sun-500: #FFC01F;    /* ACCENT */
+  --sun-300: #FFDE6A;
+  --sun-100: #FFF0BE;
+
+  /* ---- Folk supporting ---- */
+  --linen:      #FFF6E4;  /* embroidered linen surface */
+  --linen-2:    #F3E2BF;  /* linen shade / fold */
+  --ink:        #0E2350;  /* navy text + hand-drawn outlines */
+  --ink-soft:   #3C5688;
+  --stitch-red: #D9342B;  /* cross-stitch ornament accent, used sparingly */
+  --leaf:       #2F8F5B;  /* sprouts only */
+  --soil:       #6B4A2A;  /* furrow soil */
+
+  /* ---- Elevation (hand-painted sign: hard offset + soft ambient) ---- */
+  --shadow-hard: 0 6px 0 rgba(14, 35, 80, 0.45);
+  --shadow-soft: 0 14px 28px rgba(6, 31, 92, 0.32);
+  --shadow-text: 0 2px 0 rgba(14, 35, 80, 0.60), 0 8px 18px rgba(6, 31, 92, 0.40);
+  --stroke: 3px solid var(--ink);
+
+  /* ---- Spacing: 8px scale ---- */
+  --s-0: 4px;
+  --s-1: 8px;
+  --s-2: 16px;
+  --s-3: 24px;
+  --s-4: 32px;
+  --s-5: 48px;
+  --s-6: 64px;
+  --s-7: 96px;
+
+  /* ---- Radii ---- */
+  --r-sm: 8px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-pill: 999px;
+
+  /* ---- Type: Avenir Next (ships on iOS + macOS), extreme weights only ---- */
+  --font-display: "Avenir Next", "AvenirNext-Heavy", Avenir, -apple-system, sans-serif;
+  --font-body:    "Avenir Next", Avenir, -apple-system, sans-serif;
+
+  --w-thin: 200;   /* Ultra Light — big numerals */
+  --w-mid:  500;   /* Medium — reading copy */
+  --w-bold: 800;   /* Heavy — every title, every label */
+
+  /* statement scale: 12 -> 34 -> 96, roughly 3x per step */
+  --fs-micro:   11px;
+  --fs-small:   14px;
+  --fs-body:    18px;
+  --fs-title:   34px;
+  --fs-display: 54px;
+  --fs-hero:    96px;
+
+  --tr-micro: 0.20em;   /* letter-spacing for micro labels */
+  --tr-title: 0.03em;
+  --tr-hero: -0.02em;
+
+  /* ---- Motion ---- */
+  --ease-snap: cubic-bezier(0.2, 0.9, 0.2, 1);
+  --dur-press: 110ms;
+  --dur-scene: 420ms;
+}
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+html,body { width:390px; height:844px; overflow:hidden; background:var(--blue-900); }
+body { font-family:var(--font-body); color:var(--ink); }
+.screen { position:relative; width:390px; height:844px; overflow:hidden; }
+
+/* ---------- world backdrops ---------- */
+.sky {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(120% 60% at 78% 14%, rgba(255,222,106,.55) 0%, rgba(255,192,31,0) 58%),
+    linear-gradient(180deg, var(--blue-950) 0%, var(--blue-900) 22%, var(--blue-700) 52%, var(--blue-500) 74%, var(--blue-300) 92%);
+}
+.sky-flat { position:absolute; inset:0; background:linear-gradient(180deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-500) 100%); }
+.grain { position:absolute; inset:0; opacity:.18; mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(255,255,255,.7) 1px, transparent 1px);
+  background-size:4px 4px; }
+.vignette { position:absolute; inset:0; box-shadow:inset 0 0 120px rgba(6,31,92,.55); pointer-events:none; }
+
+/* ---------- typography ---------- */
+.t-hero { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-hero); line-height:.86; letter-spacing:var(--tr-hero); }
+.t-display { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-display); line-height:.94; letter-spacing:-.01em; }
+.t-title { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-title); line-height:1.02; letter-spacing:var(--tr-title); }
+.t-body { font-weight:var(--w-mid); font-size:var(--fs-body); line-height:1.35; }
+.t-small { font-weight:var(--w-bold); font-size:var(--fs-small); line-height:1.25; }
+.t-micro { font-weight:var(--w-bold); font-size:var(--fs-micro); letter-spacing:var(--tr-micro); text-transform:uppercase; }
+.t-num { font-family:var(--font-display); font-weight:var(--w-thin); letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+.on-sky { color:var(--linen); text-shadow:var(--shadow-text); }
+
+/* ---------- folk surfaces ---------- */
+.linen-card {
+  background:linear-gradient(180deg, var(--linen) 0%, #FBEDD3 100%);
+  border:var(--stroke); border-radius:var(--r-md);
+  box-shadow:var(--shadow-hard), var(--shadow-soft);
+  position:relative;
+}
+.linen-card::after{ content:""; position:absolute; inset:5px; border-radius:12px;
+  border:1.5px dashed rgba(14,35,80,.22); pointer-events:none; }
+.plank {
+  background:linear-gradient(180deg,#FFD873 0%, var(--sun-500) 46%, var(--sun-600) 100%);
+  border:var(--stroke); border-radius:10px;
+  box-shadow:0 7px 0 #A8650A, var(--shadow-soft);
+}
+.plate-blue {
+  background:linear-gradient(180deg, var(--blue-700) 0%, var(--blue-900) 100%);
+  border:var(--stroke); border-radius:var(--r-md);
+  box-shadow:0 6px 0 rgba(6,31,92,.75), var(--shadow-soft);
+  color:var(--linen);
+}
+.frost { background:rgba(255,246,228,.90); backdrop-filter:blur(6px); border:var(--stroke); border-radius:var(--r-md); }
+.pill-sky { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:var(--r-pill);
+  background:rgba(6,31,92,.62); border:2px solid rgba(255,246,228,.5); color:var(--linen); }
+
+/* ---------- cross-stitch ornament ---------- */
+.stitch-band { height:16px; width:100%;
+  background-image:
+    repeating-linear-gradient(45deg, var(--sun-500) 0 4px, transparent 4px 8px),
+    repeating-linear-gradient(-45deg, var(--stitch-red) 0 4px, transparent 4px 8px);
+  background-size:16px 16px; opacity:.95; }
+.stitch-rule { height:6px; width:100%;
+  background-image:repeating-linear-gradient(90deg, var(--stitch-red) 0 6px, transparent 6px 12px); opacity:.85; }
+
+.row { display:flex; align-items:center; }
+.col { display:flex; flex-direction:column; }
+.abs { position:absolute; }
+</style></head><body>
+<div class="screen">
+  <div class="sky"></div>
+  <svg class="abs" style="left:0;top:470px;" width="390" height="374" viewBox="0 0 390 374">
+    <path d="M0 40 C80 20 160 32 240 18 C300 8 350 22 390 14 L390 374 L0 374Z" fill="#F0B324"/>
+    <path d="M0 78 C90 62 170 72 250 60 C310 52 356 62 390 58 L390 374 L0 374Z" fill="#FFD873"/>
+    <g opacity=".4"><path d="M0 130 L390 116 L390 150 L0 166Z" fill="#F0A70F"/><path d="M0 230 L390 210 L390 254 L0 276Z" fill="#F0A70F"/></g>
+    <g fill="#FFC01F" stroke="#0E2350" stroke-width="3">
+      <path d="M36 150 L96 150 L102 184 L30 184Z"/><path d="M116 148 L176 148 L182 182 L110 182Z"/><path d="M216 146 L276 146 L282 180 L210 180Z"/>
+    </g>
+  </svg>
+  <div class="abs" style="left:-24px;top:246px;width:150px;">
+    <svg viewBox="0 0 216 404" width="150">
+      <defs><g id="b2"><rect x="14" y="-13" width="96" height="26" rx="5" fill="#FFC01F" stroke="#0E2350" stroke-width="4"/></g></defs>
+      <path d="M64 388 L152 388 L136 142 L80 142 Z" fill="#F7E7C6" stroke="#0E2350" stroke-width="4"/>
+      <path d="M74 142 C74 104 142 104 142 142 Z" fill="#0B3C9E" stroke="#0E2350" stroke-width="4"/>
+      <g transform="translate(108,150) rotate(-20)"><use href="#b2" transform="rotate(0)"/><use href="#b2" transform="rotate(90)"/><use href="#b2" transform="rotate(180)"/><use href="#b2" transform="rotate(270)"/></g>
+      <circle cx="108" cy="150" r="12" fill="#FFF6E4" stroke="#0E2350" stroke-width="4"/>
+    </svg>
+  </div>
+  <div class="abs" style="inset:0;background:rgba(6,31,92,.44);"></div>
+
+  <div class="linen-card abs" style="left:24px;top:212px;width:342px;padding:24px;z-index:6;">
+    <div class="row">
+      <div>
+        <div class="t-micro" style="color:#D9342B;">Field 12 · Lakeside Strips</div>
+        <div class="t-title" style="margin-top:6px;">Sails held</div>
+      </div>
+      <div class="abs" style="right:20px;top:20px;" data-asset="pause_mark">
+        <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="#1763DE" stroke="#0E2350" stroke-width="3"/><g fill="#FFF6E4"><rect x="14" y="12" width="6" height="20" rx="3"/><rect x="24" y="12" width="6" height="20" rx="3"/></g></svg>
+      </div>
+    </div>
+    <div class="row" style="margin-top:18px;gap:10px;">
+      <div style="flex:1.5;padding:10px;border-radius:12px;background:#FFF0BE;border:2px solid rgba(14,35,80,.25);">
+        <div class="t-num" style="font-size:26px;line-height:1;white-space:nowrap;">12 480</div><div class="t-micro" style="color:#3C5688;">score</div>
+      </div>
+      <div style="flex:1;padding:10px;border-radius:12px;background:#FFF0BE;border:2px solid rgba(14,35,80,.25);">
+        <div class="t-num" style="font-size:28px;line-height:1;">14<span style="font-size:15px;">/20</span></div><div class="t-micro" style="color:#3C5688;">plots</div>
+      </div>
+      <div style="flex:1;padding:10px;border-radius:12px;background:#FFF0BE;border:2px solid rgba(14,35,80,.25);">
+        <div class="t-num" style="font-size:28px;line-height:1;">4</div><div class="t-micro" style="color:#3C5688;">pods</div>
+      </div>
+    </div>
+    <div class="plank row" style="margin-top:20px;justify-content:center;padding:16px;">
+      <span class="t-title" style="font-size:24px;">RESUME</span>
+    </div>
+    <div class="row" style="margin-top:12px;gap:12px;">
+      <div class="plate-blue row" style="flex:1;justify-content:center;padding:13px;"><span class="t-micro">Restart</span></div>
+      <div class="plate-blue row" style="flex:1;justify-content:center;padding:13px;"><span class="t-micro">Field map</span></div>
+    </div>
+    <div class="row" style="margin-top:14px;gap:10px;align-items:center;justify-content:center;">
+      <span class="t-micro" style="color:#3C5688;">Haptics</span>
+      <div style="width:52px;height:30px;border-radius:999px;background:#FFC01F;border:3px solid #0E2350;position:relative;">
+        <div style="position:absolute;right:2px;top:2px;width:22px;height:22px;border-radius:50%;background:#FFF6E4;border:2px solid #0E2350;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="abs" style="left:0;top:0;width:390px;z-index:9;"><div class="stitch-band"></div></div>
+</div></body></html>

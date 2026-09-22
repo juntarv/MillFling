@@ -1,0 +1,1 @@
+fallback: claude-design (FIRST_PARTY_AUTH_REJECTED): "api.anthropic.com rejected your claude.ai login for Claude Design (HTTP 403), most likely because a /login token carries no Claude Design access. Run /design-login and retry, or check that your accoun…"

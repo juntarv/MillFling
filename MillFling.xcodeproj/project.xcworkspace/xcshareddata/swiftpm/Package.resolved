@@ -1,0 +1,24 @@
+{
+  "originHash" : "a939915c38010620b5da6a807dfa78bf09ca67355a9eeef499375b930cc8af72",
+  "pins" : [
+    {
+      "identity" : "appsflyerframework",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AppsFlyerSDK/AppsFlyerFramework",
+      "state" : {
+        "revision" : "edd3e30e4bafe527bc3df51250479302120510f3",
+        "version" : "6.18.1"
+      }
+    },
+    {
+      "identity" : "onesignal-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OneSignal/OneSignal-iOS-SDK",
+      "state" : {
+        "revision" : "0b5c5bea0c1deb009c1866af2b68990bfb751440",
+        "version" : "5.6.3"
+      }
+    }
+  ],
+  "version" : 3
+}

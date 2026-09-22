@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>MillFling — menu</title><style>
+/* MillFling — design tokens
+   Art direction: Embroidered Sunfield — vivid folk-textile countryside at high noon.
+   ONE dominant colour (cobalt blue) + ONE accent (sunflower yellow).
+   BANNED in this system: Inter/Roboto as the type voice, purple-indigo gradients on white,
+   rows of identical rounded cards, near-black + neon "premium dark",
+   and ivory/cream serif-editorial "safe paper" minimalism. */
+
+:root {
+  /* ---- Dominant: cobalt sky ---- */
+  --blue-950: #061F5C;
+  --blue-900: #0B3C9E;
+  --blue-700: #1763DE;   /* DOMINANT */
+  --blue-500: #3D86F0;
+  --blue-300: #8FC0FF;
+  --blue-100: #D6E8FF;
+
+  /* ---- Accent: sunflower ---- */
+  --sun-600: #F09A0C;
+  --sun-500: #FFC01F;    /* ACCENT */
+  --sun-300: #FFDE6A;
+  --sun-100: #FFF0BE;
+
+  /* ---- Folk supporting ---- */
+  --linen:      #FFF6E4;  /* embroidered linen surface */
+  --linen-2:    #F3E2BF;  /* linen shade / fold */
+  --ink:        #0E2350;  /* navy text + hand-drawn outlines */
+  --ink-soft:   #3C5688;
+  --stitch-red: #D9342B;  /* cross-stitch ornament accent, used sparingly */
+  --leaf:       #2F8F5B;  /* sprouts only */
+  --soil:       #6B4A2A;  /* furrow soil */
+
+  /* ---- Elevation (hand-painted sign: hard offset + soft ambient) ---- */
+  --shadow-hard: 0 6px 0 rgba(14, 35, 80, 0.45);
+  --shadow-soft: 0 14px 28px rgba(6, 31, 92, 0.32);
+  --shadow-text: 0 2px 0 rgba(14, 35, 80, 0.60), 0 8px 18px rgba(6, 31, 92, 0.40);
+  --stroke: 3px solid var(--ink);
+
+  /* ---- Spacing: 8px scale ---- */
+  --s-0: 4px;
+  --s-1: 8px;
+  --s-2: 16px;
+  --s-3: 24px;
+  --s-4: 32px;
+  --s-5: 48px;
+  --s-6: 64px;
+  --s-7: 96px;
+
+  /* ---- Radii ---- */
+  --r-sm: 8px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-pill: 999px;
+
+  /* ---- Type: Avenir Next (ships on iOS + macOS), extreme weights only ---- */
+  --font-display: "Avenir Next", "AvenirNext-Heavy", Avenir, -apple-system, sans-serif;
+  --font-body:    "Avenir Next", Avenir, -apple-system, sans-serif;
+
+  --w-thin: 200;   /* Ultra Light — big numerals */
+  --w-mid:  500;   /* Medium — reading copy */
+  --w-bold: 800;   /* Heavy — every title, every label */
+
+  /* statement scale: 12 -> 34 -> 96, roughly 3x per step */
+  --fs-micro:   11px;
+  --fs-small:   14px;
+  --fs-body:    18px;
+  --fs-title:   34px;
+  --fs-display: 54px;
+  --fs-hero:    96px;
+
+  --tr-micro: 0.20em;   /* letter-spacing for micro labels */
+  --tr-title: 0.03em;
+  --tr-hero: -0.02em;
+
+  /* ---- Motion ---- */
+  --ease-snap: cubic-bezier(0.2, 0.9, 0.2, 1);
+  --dur-press: 110ms;
+  --dur-scene: 420ms;
+}
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+html,body { width:390px; height:844px; overflow:hidden; background:var(--blue-900); }
+body { font-family:var(--font-body); color:var(--ink); }
+.screen { position:relative; width:390px; height:844px; overflow:hidden; }
+
+/* ---------- world backdrops ---------- */
+.sky {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(120% 60% at 78% 14%, rgba(255,222,106,.55) 0%, rgba(255,192,31,0) 58%),
+    linear-gradient(180deg, var(--blue-950) 0%, var(--blue-900) 22%, var(--blue-700) 52%, var(--blue-500) 74%, var(--blue-300) 92%);
+}
+.sky-flat { position:absolute; inset:0; background:linear-gradient(180deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-500) 100%); }
+.grain { position:absolute; inset:0; opacity:.18; mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(255,255,255,.7) 1px, transparent 1px);
+  background-size:4px 4px; }
+.vignette { position:absolute; inset:0; box-shadow:inset 0 0 120px rgba(6,31,92,.55); pointer-events:none; }
+
+/* ---------- typography ---------- */
+.t-hero { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-hero); line-height:.86; letter-spacing:var(--tr-hero); }
+.t-display { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-display); line-height:.94; letter-spacing:-.01em; }
+.t-title { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-title); line-height:1.02; letter-spacing:var(--tr-title); }
+.t-body { font-weight:var(--w-mid); font-size:var(--fs-body); line-height:1.35; }
+.t-small { font-weight:var(--w-bold); font-size:var(--fs-small); line-height:1.25; }
+.t-micro { font-weight:var(--w-bold); font-size:var(--fs-micro); letter-spacing:var(--tr-micro); text-transform:uppercase; }
+.t-num { font-family:var(--font-display); font-weight:var(--w-thin); letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+.on-sky { color:var(--linen); text-shadow:var(--shadow-text); }
+
+/* ---------- folk surfaces ---------- */
+.linen-card {
+  background:linear-gradient(180deg, var(--linen) 0%, #FBEDD3 100%);
+  border:var(--stroke); border-radius:var(--r-md);
+  box-shadow:var(--shadow-hard), var(--shadow-soft);
+  position:relative;
+}
+.linen-card::after{ content:""; position:absolute; inset:5px; border-radius:12px;
+  border:1.5px dashed rgba(14,35,80,.22); pointer-events:none; }
+.plank {
+  background:linear-gradient(180deg,#FFD873 0%, var(--sun-500) 46%, var(--sun-600) 100%);
+  border:var(--stroke); border-radius:10px;
+  box-shadow:0 7px 0 #A8650A, var(--shadow-soft);
+}
+.plate-blue {
+  background:linear-gradient(180deg, var(--blue-700) 0%, var(--blue-900) 100%);
+  border:var(--stroke); border-radius:var(--r-md);
+  box-shadow:0 6px 0 rgba(6,31,92,.75), var(--shadow-soft);
+  color:var(--linen);
+}
+.frost { background:rgba(255,246,228,.90); backdrop-filter:blur(6px); border:var(--stroke); border-radius:var(--r-md); }
+.pill-sky { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:var(--r-pill);
+  background:rgba(6,31,92,.62); border:2px solid rgba(255,246,228,.5); color:var(--linen); }
+
+/* ---------- cross-stitch ornament ---------- */
+.stitch-band { height:16px; width:100%;
+  background-image:
+    repeating-linear-gradient(45deg, var(--sun-500) 0 4px, transparent 4px 8px),
+    repeating-linear-gradient(-45deg, var(--stitch-red) 0 4px, transparent 4px 8px);
+  background-size:16px 16px; opacity:.95; }
+.stitch-rule { height:6px; width:100%;
+  background-image:repeating-linear-gradient(90deg, var(--stitch-red) 0 6px, transparent 6px 12px); opacity:.85; }
+
+.row { display:flex; align-items:center; }
+.col { display:flex; flex-direction:column; }
+.abs { position:absolute; }
+</style></head><body>
+<div class="screen">
+  <div class="sky"></div>
+
+  <div class="abs" style="left:242px;top:44px;width:112px;z-index:2;" data-asset="cloud_puff">
+    <svg viewBox="0 0 160 70" width="112">
+      <path d="M22 52c-12 0-20-8-20-17S10 18 22 19c3-11 13-17 24-14 6-9 20-10 28-2 12-3 24 5 25 16 10 1 17 8 17 16 0 9-8 17-19 17z" fill="#FFF6E4" opacity=".95" stroke="#0E2350" stroke-width="3"/>
+      <path d="M30 44h70" stroke="#8FC0FF" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+    </svg>
+  </div>
+  <div class="abs" style="left:6px;top:232px;width:86px;opacity:.8;z-index:2;">
+    <svg viewBox="0 0 160 70" width="86">
+      <path d="M22 52c-12 0-20-8-20-17S10 18 22 19c3-11 13-17 24-14 6-9 20-10 28-2 12-3 24 5 25 16 10 1 17 8 17 16 0 9-8 17-19 17z" fill="#FFF6E4" opacity=".9" stroke="#0E2350" stroke-width="3"/>
+    </svg>
+  </div>
+
+  <!-- ===== land ===== -->
+  <svg class="abs" style="left:0;top:460px;z-index:3;" width="390" height="384" viewBox="0 0 390 384">
+    <path d="M0 72 C70 38 140 50 208 32 C280 13 340 36 390 24 L390 130 L0 130Z" fill="#F0B324"/>
+    <path d="M0 86 C60 68 132 80 200 64 C268 48 330 68 390 54 L390 140 L0 140Z" fill="#FFC01F"/>
+    <g opacity=".4" stroke="#C97F0A" stroke-width="3" fill="none">
+      <path d="M0 106 C90 92 150 102 220 88 C290 74 340 88 390 78"/>
+      <path d="M0 120 C90 106 150 116 220 102 C290 88 340 102 390 92"/>
+    </g>
+    <path d="M0 128 L390 114 L390 384 L0 384Z" fill="#FFD873"/>
+    <g>
+      <path d="M0 160 L390 146 L390 172 L0 188Z" fill="#F0A70F" opacity=".5"/>
+      <path d="M0 218 L390 200 L390 236 L0 256Z" fill="#F0A70F" opacity=".5"/>
+      <path d="M0 296 L390 272 L390 318 L0 346Z" fill="#F0A70F" opacity=".5"/>
+      <path d="M0 372 L390 348 L390 384 L0 384Z" fill="#E08F08" opacity=".45"/>
+    </g>
+    <path d="M296 116 C246 160 232 200 258 242 C288 290 206 310 156 340 C122 360 112 372 108 384 L184 384 C192 364 222 346 264 326 C332 294 348 248 310 204 C292 182 292 150 326 116Z" fill="#FFF0BE" opacity=".9"/>
+    <path d="M296 116 C246 160 232 200 258 242 C288 290 206 310 156 340 C122 360 112 372 108 384" fill="none" stroke="#C99A2E" stroke-width="2" stroke-dasharray="7 9" opacity=".65"/>
+  </svg>
+
+  <!-- ===== windmill hero ===== -->
+  <div class="abs" style="left:184px;top:168px;width:214px;z-index:4;" data-asset="windmill_hero">
+    <svg viewBox="-16 0 248 404" width="214">
+      <defs>
+        <linearGradient id="towerG" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#FFF6E4"/><stop offset=".55" stop-color="#F7E7C6"/><stop offset="1" stop-color="#E4CDA2"/>
+        </linearGradient>
+        <g id="blade">
+          <rect x="14" y="-15" width="104" height="30" rx="5" fill="#FFC01F" stroke="#0E2350" stroke-width="4"/>
+          <rect x="18" y="-11" width="44" height="22" rx="3" fill="#FFF6E4" stroke="#0E2350" stroke-width="3"/>
+          <path d="M70 -11 V11 M84 -11 V11 M98 -11 V11" stroke="#0E2350" stroke-width="3" opacity=".75"/>
+          <circle cx="112" cy="0" r="5" fill="#D9342B" stroke="#0E2350" stroke-width="3"/>
+        </g>
+      </defs>
+      <ellipse cx="108" cy="392" rx="92" ry="20" fill="#E08F08" opacity=".5"/>
+      <path d="M64 388 L152 388 L136 142 L80 142 Z" fill="url(#towerG)" stroke="#0E2350" stroke-width="4"/>
+      <path d="M86 142 L92 388 M108 142 L108 388 M130 142 L124 388" stroke="#C7A96E" stroke-width="2" opacity=".5"/>
+      <path d="M72 300 L144 300 L146 330 L70 330 Z" fill="#1763DE" stroke="#0E2350" stroke-width="3"/>
+      <g fill="#FFC01F"><path d="M84 306 l8 9 -8 9 -8-9z"/><path d="M108 306 l8 9 -8 9 -8-9z"/><path d="M132 306 l8 9 -8 9 -8-9z"/></g>
+      <g fill="#D9342B"><path d="M96 309 l5 6 -5 6 -5-6z"/><path d="M120 309 l5 6 -5 6 -5-6z"/></g>
+      <path d="M96 388 L96 344 a12 12 0 0 1 24 0 L120 388 Z" fill="#1763DE" stroke="#0E2350" stroke-width="4"/>
+      <circle cx="113" cy="366" r="3" fill="#FFC01F"/>
+      <rect x="96" y="246" width="26" height="26" rx="4" fill="#0B3C9E" stroke="#0E2350" stroke-width="4"/>
+      <path d="M96 259 h26 M109 246 v26" stroke="#FFF6E4" stroke-width="3"/>
+      <path d="M60 216 L156 216 L152 228 L64 228 Z" fill="#FFF6E4" stroke="#0E2350" stroke-width="4"/>
+      <g stroke="#0E2350" stroke-width="3" fill="none"><path d="M70 216 v-16 M92 216 v-16 M114 216 v-16 M136 216 v-16"/><path d="M64 200 h92"/></g>
+      <path d="M74 142 C74 104 142 104 142 142 Z" fill="#0B3C9E" stroke="#0E2350" stroke-width="4"/>
+      <path d="M74 142 h68" stroke="#0E2350" stroke-width="4"/>
+      <circle cx="108" cy="104" r="7" fill="#D9342B" stroke="#0E2350" stroke-width="3"/>
+      <g transform="translate(108,150)">
+        <g transform="rotate(16)">
+          <use href="#blade" transform="rotate(0)"/>
+          <use href="#blade" transform="rotate(90)"/>
+          <use href="#blade" transform="rotate(180)"/>
+          <use href="#blade" transform="rotate(270)"/>
+        </g>
+        <circle r="14" fill="#FFF6E4" stroke="#0E2350" stroke-width="4"/>
+        <circle r="5" fill="#0E2350"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- flying pod arc: the game's verb, drawn into the scene -->
+  <svg class="abs" style="left:150px;top:336px;z-index:5;" width="220" height="190" viewBox="0 0 220 190">
+    <path d="M206 16 C150 30 84 66 30 150" fill="none" stroke="#FFF6E4" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 14" opacity=".85"/>
+    <g transform="translate(30,150) rotate(28)" data-asset="pod_seed">
+      <ellipse rx="13" ry="9" fill="#FFF6E4" stroke="#0E2350" stroke-width="3.5"/>
+      <path d="M-6 -3 q6 5 12 0" fill="none" stroke="#0E2350" stroke-width="2.5"/>
+      <circle cx="-4" cy="2" r="2.4" fill="#0E2350"/><circle cx="4" cy="2" r="2.4" fill="#7A4A05"/>
+    </g>
+  </svg>
+
+  <!-- ===== title banner ===== -->
+  <div class="abs" style="left:14px;top:56px;width:236px;transform:rotate(-4deg);z-index:6;" data-asset="title_banner">
+    <svg viewBox="0 0 238 126" width="236">
+      <g stroke="#0E2350" stroke-width="4" fill="#FFF6E4">
+        <rect x="6" y="6" width="226" height="10" rx="5" fill="#8B5E2A"/>
+        <path d="M18 16 L220 16 L220 96 L204 110 L188 96 L172 110 L156 96 L140 110 L124 96 L108 110 L92 96 L76 110 L60 96 L44 110 L28 96 L18 96 Z"/>
+      </g>
+      <rect x="18" y="24" width="202" height="7" fill="#D9342B" opacity=".9"/>
+      <rect x="18" y="86" width="202" height="7" fill="#1763DE" opacity=".9"/>
+      <text x="119" y="68" text-anchor="middle" font-family="Avenir Next, Avenir, sans-serif" font-weight="800" font-size="33" fill="#0E2350">MILLFLING</text>
+      <g fill="#FFC01F" stroke="#0E2350" stroke-width="2">
+        <path d="M30 80 l6 7 -6 7 -6-7z"/><path d="M208 80 l6 7 -6 7 -6-7z"/>
+      </g>
+    </svg>
+  </div>
+  <div class="abs" style="left:32px;top:170px;transform:rotate(-4deg);z-index:6;">
+    <span class="pill-sky t-micro">Sow the bright fields</span>
+  </div>
+
+  <!-- ===== RIBBONS: rosette on the fence ===== -->
+  <div class="abs" style="left:14px;top:372px;width:118px;z-index:6;text-align:center;">
+    <div class="abs" style="left:53px;top:96px;width:12px;height:72px;background:linear-gradient(90deg,#A8702F,#8B5E2A);border:3px solid #0E2350;border-radius:4px;"></div>
+    <div data-asset="rosette_ribbon">
+      <svg viewBox="0 0 104 112" width="98">
+        <g stroke="#0E2350" stroke-width="3">
+          <path d="M36 70 L28 108 L44 98 L52 110 L60 98 L76 108 L68 70Z" fill="#1763DE"/>
+          <circle cx="52" cy="44" r="34" fill="#FFC01F"/>
+          <circle cx="52" cy="44" r="22" fill="#FFF6E4"/>
+        </g>
+        <path d="M52 30 l7 9 -7 9 -7-9z" fill="#D9342B" stroke="#0E2350" stroke-width="1.6"/>
+        <g stroke="#0E2350" stroke-width="2.5" fill="none"><path d="M52 10 v-8 M22 20 l-6-6 M82 20 l6-6"/></g>
+      </svg>
+    </div>
+    <div class="plate-blue" style="margin:-4px auto 0;padding:6px 8px;border-radius:12px;width:118px;position:relative;">
+      <div class="t-micro" style="font-size:10px;white-space:nowrap;">Ribbons 7/16</div>
+    </div>
+  </div>
+
+  <!-- ===== stats: embroidered towel on a line between two posts ===== -->
+  <div class="abs" style="left:16px;top:516px;width:250px;z-index:7;transform:rotate(-2deg);">
+    <div data-asset="rushnyk_stats">
+      <svg viewBox="0 0 250 122" width="250">
+        <path d="M4 12 C80 4 170 4 246 12" fill="none" stroke="#7A4A05" stroke-width="4"/>
+        <path d="M12 10 L238 10 L238 96 L226 110 L214 96 L202 110 L190 96 L178 110 L166 96 L154 110 L142 96 L130 110 L118 96 L106 110 L94 96 L82 110 L70 96 L58 110 L46 96 L34 110 L22 96 L12 96 Z" fill="#FFF6E4" stroke="#0E2350" stroke-width="3.5"/>
+        <rect x="12" y="18" width="226" height="5" fill="#D9342B"/>
+        <rect x="12" y="86" width="226" height="5" fill="#1763DE"/>
+        <g stroke="#0E2350" stroke-width="2.5" opacity=".3"><path d="M88 28 v54 M164 28 v54"/></g>
+        <g fill="#FFC01F" stroke="#0E2350" stroke-width="1.5" opacity=".9">
+          <path d="M50 100 l5 6 -5 6 -5-6z"/><path d="M125 100 l5 6 -5 6 -5-6z"/><path d="M200 100 l5 6 -5 6 -5-6z"/>
+        </g>
+      </svg>
+    </div>
+    <div class="abs row" style="left:12px;top:30px;width:226px;">
+      <div style="width:76px;text-align:center;"><div class="t-num" style="font-size:28px;line-height:1;">4820</div><div class="t-micro" style="color:#3C5688;font-size:9px;margin-top:4px;">seeds</div></div>
+      <div style="width:76px;text-align:center;"><div class="t-num" style="font-size:28px;line-height:1;">18</div><div class="t-micro" style="color:#3C5688;font-size:9px;margin-top:4px;">streak</div></div>
+      <div style="width:74px;text-align:center;"><div class="t-num" style="font-size:28px;line-height:1;">12<span style="font-size:15px;">/36</span></div><div class="t-micro" style="color:#3C5688;font-size:9px;margin-top:4px;">fields</div></div>
+    </div>
+  </div>
+
+  <!-- ===== PRIMARY: hand-painted SOW sign ===== -->
+  <div class="abs" style="left:14px;top:628px;width:238px;z-index:9;transform:rotate(-3deg);" data-asset="sign_sow">
+    <svg viewBox="0 0 246 152" width="238">
+      <rect x="44" y="96" width="14" height="56" rx="4" fill="#8B5E2A" stroke="#0E2350" stroke-width="3"/>
+      <rect x="182" y="96" width="14" height="56" rx="4" fill="#8B5E2A" stroke="#0E2350" stroke-width="3"/>
+      <rect x="6" y="14" width="234" height="96" rx="12" fill="#A8650A"/>
+      <rect x="6" y="6" width="234" height="96" rx="12" fill="#FFC01F" stroke="#0E2350" stroke-width="4"/>
+      <rect x="14" y="14" width="218" height="80" rx="8" fill="none" stroke="#0E2350" stroke-width="2" stroke-dasharray="5 6" opacity=".5"/>
+      <text x="123" y="58" text-anchor="middle" font-family="Avenir Next, Avenir, sans-serif" font-weight="800" font-size="33" fill="#0E2350">SOW</text>
+      <text x="123" y="82" text-anchor="middle" font-family="Avenir Next, Avenir, sans-serif" font-weight="800" font-size="11" letter-spacing="1.2" fill="#7A4A05">FIELD 12 · TERRACED SLOPES</text>
+      <g fill="#D9342B" stroke="#0E2350" stroke-width="2">
+        <path d="M36 46 l8 9 -8 9 -8-9z"/><path d="M210 46 l8 9 -8 9 -8-9z"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ===== FIELDS: map board on a post ===== -->
+  <div class="abs" style="left:262px;top:596px;width:116px;z-index:9;text-align:center;">
+    <div data-asset="post_fields">
+      <svg viewBox="0 0 116 150" width="116">
+        <rect x="52" y="92" width="13" height="58" rx="4" fill="#8B5E2A" stroke="#0E2350" stroke-width="3"/>
+        <g transform="rotate(-4 58 56)">
+          <rect x="6" y="8" width="104" height="94" rx="10" fill="#FFF6E4" stroke="#0E2350" stroke-width="4"/>
+          <rect x="14" y="16" width="88" height="78" rx="6" fill="#D6E8FF" stroke="#0E2350" stroke-width="2.5"/>
+          <g fill="#FFC01F" stroke="#0E2350" stroke-width="2">
+            <rect x="20" y="22" width="26" height="20" rx="4"/><rect x="52" y="22" width="26" height="20" rx="4"/>
+            <rect x="20" y="48" width="26" height="20" rx="4"/><rect x="66" y="52" width="26" height="30" rx="4"/>
+          </g>
+          <path d="M22 88 C40 80 52 74 70 78 C84 82 92 74 98 66" fill="none" stroke="#D9342B" stroke-width="3" stroke-dasharray="6 6"/>
+          <circle cx="98" cy="66" r="6" fill="#D9342B" stroke="#0E2350" stroke-width="2.5"/>
+        </g>
+      </svg>
+    </div>
+    <div class="plate-blue" style="margin:-12px auto 0;padding:6px 8px;border-radius:12px;width:112px;">
+      <div class="t-micro" style="font-size:10px;white-space:nowrap;">Field map</div>
+    </div>
+  </div>
+
+  <!-- ===== ALMANAC: seed crate ===== -->
+  <div class="abs" style="left:20px;top:716px;width:110px;z-index:10;text-align:center;">
+    <div data-asset="crate_seeds">
+      <svg viewBox="0 0 112 84" width="104">
+        <g stroke="#0E2350" stroke-width="3.5">
+          <rect x="8" y="26" width="96" height="52" rx="7" fill="#C98A3C"/>
+          <path d="M8 44 h96 M8 60 h96" stroke-width="2.5" opacity=".6"/>
+          <rect x="22" y="12" width="30" height="22" rx="6" fill="#FFF6E4"/>
+          <rect x="58" y="16" width="30" height="18" rx="6" fill="#FFC01F"/>
+        </g>
+        <g fill="#0E2350"><ellipse cx="34" cy="22" rx="4" ry="6"/><ellipse cx="44" cy="24" rx="4" ry="6"/><ellipse cx="70" cy="25" rx="4" ry="6" fill="#7A4A05"/></g>
+      </svg>
+    </div>
+    <div class="plate-blue" style="margin:0 auto;padding:6px 8px;border-radius:12px;width:100px;">
+      <div class="t-micro">Almanac</div>
+    </div>
+  </div>
+
+  <!-- ===== SETTINGS: tool basket ===== -->
+  <div class="abs" style="left:148px;top:730px;width:94px;z-index:10;text-align:center;">
+    <div data-asset="basket_tools">
+      <svg viewBox="0 0 96 72" width="86">
+        <g stroke="#0E2350" stroke-width="3.5">
+          <path d="M10 26 L86 26 L76 66 L20 66 Z" fill="#C98A3C"/>
+          <path d="M22 26 C24 6 72 6 74 26" fill="none"/>
+          <path d="M20 40 h56 M24 52 h48" stroke-width="2.5" opacity=".6"/>
+          <rect x="30" y="8" width="10" height="22" rx="4" fill="#1763DE"/>
+          <rect x="56" y="4" width="10" height="26" rx="4" fill="#FFC01F"/>
+        </g>
+      </svg>
+    </div>
+    <div class="plate-blue" style="margin:0 auto;padding:6px 8px;border-radius:12px;width:86px;">
+      <div class="t-micro">Settings</div>
+    </div>
+  </div>
+
+  <div class="abs" style="left:300px;top:712px;width:94px;z-index:8;" data-asset="sunflower_cluster">
+    <svg viewBox="0 0 104 152" width="96">
+      <g stroke="#0E2350" stroke-width="3">
+        <path d="M34 152 C30 110 26 80 30 52" fill="none" stroke="#2F8F5B" stroke-width="7"/>
+        <path d="M74 152 C74 118 76 96 72 74" fill="none" stroke="#2F8F5B" stroke-width="7"/>
+        <path d="M32 108 C10 100 8 84 26 84 C36 84 38 96 32 108Z" fill="#2F8F5B"/>
+        <path d="M74 120 C96 114 100 98 82 96 C72 96 68 110 74 120Z" fill="#2F8F5B"/>
+        <g transform="translate(30,48)">
+          <g fill="#FFC01F"><circle cx="0" cy="-24" r="10"/><circle cx="21" cy="-12" r="10"/><circle cx="21" cy="12" r="10"/><circle cx="0" cy="24" r="10"/><circle cx="-21" cy="12" r="10"/><circle cx="-21" cy="-12" r="10"/></g>
+          <circle r="16" fill="#7A4A05"/>
+        </g>
+        <g transform="translate(72,68) scale(.8)">
+          <g fill="#FFDE6A"><circle cx="0" cy="-24" r="10"/><circle cx="21" cy="-12" r="10"/><circle cx="21" cy="12" r="10"/><circle cx="0" cy="24" r="10"/><circle cx="-21" cy="12" r="10"/><circle cx="-21" cy="-12" r="10"/></g>
+          <circle r="16" fill="#7A4A05"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="abs" style="left:0;top:0;width:390px;z-index:12;" data-asset="stitch_border"><div class="stitch-band"></div></div>
+  <div class="vignette" style="z-index:11;"></div>
+</div>
+</body></html>

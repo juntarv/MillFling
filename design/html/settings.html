@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>MillFling — settings</title><style>
+/* MillFling — design tokens
+   Art direction: Embroidered Sunfield — vivid folk-textile countryside at high noon.
+   ONE dominant colour (cobalt blue) + ONE accent (sunflower yellow).
+   BANNED in this system: Inter/Roboto as the type voice, purple-indigo gradients on white,
+   rows of identical rounded cards, near-black + neon "premium dark",
+   and ivory/cream serif-editorial "safe paper" minimalism. */
+
+:root {
+  /* ---- Dominant: cobalt sky ---- */
+  --blue-950: #061F5C;
+  --blue-900: #0B3C9E;
+  --blue-700: #1763DE;   /* DOMINANT */
+  --blue-500: #3D86F0;
+  --blue-300: #8FC0FF;
+  --blue-100: #D6E8FF;
+
+  /* ---- Accent: sunflower ---- */
+  --sun-600: #F09A0C;
+  --sun-500: #FFC01F;    /* ACCENT */
+  --sun-300: #FFDE6A;
+  --sun-100: #FFF0BE;
+
+  /* ---- Folk supporting ---- */
+  --linen:      #FFF6E4;  /* embroidered linen surface */
+  --linen-2:    #F3E2BF;  /* linen shade / fold */
+  --ink:        #0E2350;  /* navy text + hand-drawn outlines */
+  --ink-soft:   #3C5688;
+  --stitch-red: #D9342B;  /* cross-stitch ornament accent, used sparingly */
+  --leaf:       #2F8F5B;  /* sprouts only */
+  --soil:       #6B4A2A;  /* furrow soil */
+
+  /* ---- Elevation (hand-painted sign: hard offset + soft ambient) ---- */
+  --shadow-hard: 0 6px 0 rgba(14, 35, 80, 0.45);
+  --shadow-soft: 0 14px 28px rgba(6, 31, 92, 0.32);
+  --shadow-text: 0 2px 0 rgba(14, 35, 80, 0.60), 0 8px 18px rgba(6, 31, 92, 0.40);
+  --stroke: 3px solid var(--ink);
+
+  /* ---- Spacing: 8px scale ---- */
+  --s-0: 4px;
+  --s-1: 8px;
+  --s-2: 16px;
+  --s-3: 24px;
+  --s-4: 32px;
+  --s-5: 48px;
+  --s-6: 64px;
+  --s-7: 96px;
+
+  /* ---- Radii ---- */
+  --r-sm: 8px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-pill: 999px;
+
+  /* ---- Type: Avenir Next (ships on iOS + macOS), extreme weights only ---- */
+  --font-display: "Avenir Next", "AvenirNext-Heavy", Avenir, -apple-system, sans-serif;
+  --font-body:    "Avenir Next", Avenir, -apple-system, sans-serif;
+
+  --w-thin: 200;   /* Ultra Light — big numerals */
+  --w-mid:  500;   /* Medium — reading copy */
+  --w-bold: 800;   /* Heavy — every title, every label */
+
+  /* statement scale: 12 -> 34 -> 96, roughly 3x per step */
+  --fs-micro:   11px;
+  --fs-small:   14px;
+  --fs-body:    18px;
+  --fs-title:   34px;
+  --fs-display: 54px;
+  --fs-hero:    96px;
+
+  --tr-micro: 0.20em;   /* letter-spacing for micro labels */
+  --tr-title: 0.03em;
+  --tr-hero: -0.02em;
+
+  /* ---- Motion ---- */
+  --ease-snap: cubic-bezier(0.2, 0.9, 0.2, 1);
+  --dur-press: 110ms;
+  --dur-scene: 420ms;
+}
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+html,body { width:390px; height:844px; overflow:hidden; background:var(--blue-900); }
+body { font-family:var(--font-body); color:var(--ink); }
+.screen { position:relative; width:390px; height:844px; overflow:hidden; }
+
+/* ---------- world backdrops ---------- */
+.sky {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(120% 60% at 78% 14%, rgba(255,222,106,.55) 0%, rgba(255,192,31,0) 58%),
+    linear-gradient(180deg, var(--blue-950) 0%, var(--blue-900) 22%, var(--blue-700) 52%, var(--blue-500) 74%, var(--blue-300) 92%);
+}
+.sky-flat { position:absolute; inset:0; background:linear-gradient(180deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-500) 100%); }
+.grain { position:absolute; inset:0; opacity:.18; mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(255,255,255,.7) 1px, transparent 1px);
+  background-size:4px 4px; }
+.vignette { position:absolute; inset:0; box-shadow:inset 0 0 120px rgba(6,31,92,.55); pointer-events:none; }
+
+/* ---------- typography ---------- */
+.t-hero { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-hero); line-height:.86; letter-spacing:var(--tr-hero); }
+.t-display { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-display); line-height:.94; letter-spacing:-.01em; }
+.t-title { font-family:var(--font-display); font-weight:var(--w-bold); font-size:var(--fs-title); line-height:1.02; letter-spacing:var(--tr-title); }
+.t-body { font-weight:var(--w-mid); font-size:var(--fs-body); line-height:1.35; }
+.t-small { font-weight:var(--w-bold); font-size:var(--fs-small); line-height:1.25; }
+.t-micro { font-weight:var(--w-bold); font-size:var(--fs-micro); letter-spacing:var(--tr-micro); text-transform:uppercase; }
+.t-num { font-family:var(--font-display); font-weight:var(--w-thin); letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+.on-sky { color:var(--linen); text-shadow:var(--shadow-text); }
+
+/* ---------- folk surfaces ---------- */
+.linen-card {
+  background:linear-gradient(180deg, var(--linen) 0%, #FBEDD3 100%);
+  border:var(--stroke); border-radius:var(--r-md);
+  box-shadow:var(--shadow-hard), var(--shadow-soft);
+  position:relative;
+}
+.linen-card::after{ content:""; position:absolute; inset:5px; border-radius:12px;
+  border:1.5px dashed rgba(14,35,80,.22); pointer-events:none; }
+.plank {
+  background:linear-gradient(180deg,#FFD873 0%, var(--sun-500) 46%, var(--sun-600) 100%);
+  border:var(--stroke); border-radius:10px;
+  box-shadow:0 7px 0 #A8650A, var(--shadow-soft);
+}
+.plate-blue {
+  background:linear-gradient(180deg, var(--blue-700) 0%, var(--blue-900) 100%);
+  border:var(--stroke); border-radius:var(--r-md);
+  box-shadow:0 6px 0 rgba(6,31,92,.75), var(--shadow-soft);
+  color:var(--linen);
+}
+.frost { background:rgba(255,246,228,.90); backdrop-filter:blur(6px); border:var(--stroke); border-radius:var(--r-md); }
+.pill-sky { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:var(--r-pill);
+  background:rgba(6,31,92,.62); border:2px solid rgba(255,246,228,.5); color:var(--linen); }
+
+/* ---------- cross-stitch ornament ---------- */
+.stitch-band { height:16px; width:100%;
+  background-image:
+    repeating-linear-gradient(45deg, var(--sun-500) 0 4px, transparent 4px 8px),
+    repeating-linear-gradient(-45deg, var(--stitch-red) 0 4px, transparent 4px 8px);
+  background-size:16px 16px; opacity:.95; }
+.stitch-rule { height:6px; width:100%;
+  background-image:repeating-linear-gradient(90deg, var(--stitch-red) 0 6px, transparent 6px 12px); opacity:.85; }
+
+.row { display:flex; align-items:center; }
+.col { display:flex; flex-direction:column; }
+.abs { position:absolute; }
+</style></head><body>
+<div class="screen">
+  <div class="sky"></div>
+  <svg class="abs" style="left:0;top:596px;" width="390" height="248" viewBox="0 0 390 248">
+    <path d="M0 58 C90 38 180 54 260 38 C320 26 360 38 390 32 L390 248 L0 248Z" fill="#F0B324" opacity=".9"/>
+    <path d="M0 112 C90 96 180 108 260 94 C320 84 360 94 390 90 L390 248 L0 248Z" fill="#FFD873" opacity=".95"/>
+    <g opacity=".45"><path d="M0 170 L390 152 L390 190 L0 210Z" fill="#F0A70F"/></g>
+  </svg>
+  <div class="abs" style="left:14px;top:700px;width:92px;z-index:2;" data-asset="sunflower_pair">
+    <svg viewBox="0 0 104 152" width="92">
+      <g stroke="#0E2350" stroke-width="3">
+        <path d="M34 152 C30 110 26 80 30 52" fill="none" stroke="#2F8F5B" stroke-width="7"/>
+        <path d="M74 152 C74 118 76 96 72 74" fill="none" stroke="#2F8F5B" stroke-width="7"/>
+        <path d="M32 108 C10 100 8 84 26 84 C36 84 38 96 32 108Z" fill="#2F8F5B"/>
+        <g transform="translate(30,48)">
+          <g fill="#FFC01F"><circle cx="0" cy="-24" r="10"/><circle cx="21" cy="-12" r="10"/><circle cx="21" cy="12" r="10"/><circle cx="0" cy="24" r="10"/><circle cx="-21" cy="12" r="10"/><circle cx="-21" cy="-12" r="10"/></g>
+          <circle r="16" fill="#7A4A05"/>
+        </g>
+        <g transform="translate(72,68) scale(.8)">
+          <g fill="#FFDE6A"><circle cx="0" cy="-24" r="10"/><circle cx="21" cy="-12" r="10"/><circle cx="21" cy="12" r="10"/><circle cx="0" cy="24" r="10"/><circle cx="-21" cy="12" r="10"/><circle cx="-21" cy="-12" r="10"/></g>
+          <circle r="16" fill="#7A4A05"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="abs row" style="left:14px;top:52px;width:362px;z-index:6;gap:10px;align-items:center;">
+    <div class="linen-card row" style="width:52px;height:52px;align-items:center;justify-content:center;">
+      <svg width="20" height="18" viewBox="0 0 20 18"><path d="M18 9 H4 M9 3 L3 9 L9 15" fill="none" stroke="#0E2350" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="linen-card" style="flex:1;padding:8px 14px;">
+      <div class="t-micro" style="color:#D9342B;">Mill Hill · offline</div>
+      <div class="t-title" style="font-size:22px;margin-top:2px;">Settings</div>
+    </div>
+  </div>
+
+  <div class="linen-card abs" style="left:14px;top:124px;width:362px;padding:6px 18px 10px;z-index:6;">
+<div class="row" style="padding:14px 0;gap:12px;align-items:center;">
+      <div style="flex:1;">
+        <div class="t-small" style="font-size:16px;">Haptics</div>
+        <div class="t-micro" style="color:#3C5688;font-size:10px;margin-top:4px;">Taps on release, burst and sprout</div>
+      </div>
+      <div style="width:58px;height:34px;border-radius:999px;background:#FFC01F;border:3px solid #0E2350;position:relative;box-shadow:0 3px 0 rgba(14,35,80,.35);">
+        <div style="position:absolute;right:2px;top:2px;width:26px;height:26px;border-radius:50%;background:#FFF6E4;border:2px solid #0E2350;"></div></div>
+    </div><div style="height:2px;background:repeating-linear-gradient(90deg,rgba(14,35,80,.35) 0 5px,transparent 5px 11px);"></div><div class="row" style="padding:14px 0;gap:12px;align-items:center;">
+      <div style="flex:1;">
+        <div class="t-small" style="font-size:16px;">Animations</div>
+        <div class="t-micro" style="color:#3C5688;font-size:10px;margin-top:4px;">Screen shake, sail spin, score roll-up</div>
+      </div>
+      <div style="width:58px;height:34px;border-radius:999px;background:#FFC01F;border:3px solid #0E2350;position:relative;box-shadow:0 3px 0 rgba(14,35,80,.35);">
+        <div style="position:absolute;right:2px;top:2px;width:26px;height:26px;border-radius:50%;background:#FFF6E4;border:2px solid #0E2350;"></div></div>
+    </div>  </div>
+
+  <div class="linen-card abs" style="left:14px;top:318px;width:362px;padding:6px 18px 10px;z-index:6;">
+<div class="row" style="padding:14px 0;gap:12px;align-items:center;">
+      <div style="flex:1;">
+        <div class="t-small" style="font-size:16px;">Seed in the hopper</div>
+        <div class="t-micro" style="color:#3C5688;font-size:10px;margin-top:4px;">Flax · 4 seeds per burst</div>
+      </div>
+      <svg width="14" height="20" viewBox="0 0 14 20"><path d="M3 3 L11 10 L3 17" fill="none" stroke="#0E2350" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div><div style="height:2px;background:repeating-linear-gradient(90deg,rgba(14,35,80,.35) 0 5px,transparent 5px 11px);"></div><div class="row" style="padding:14px 0;gap:12px;align-items:center;">
+      <div style="flex:1;">
+        <div class="t-small" style="font-size:16px;">Replay the three-step tour</div>
+        <div class="t-micro" style="color:#3C5688;font-size:10px;margin-top:4px;">The release, burst and wind lessons again</div>
+      </div>
+      <svg width="14" height="20" viewBox="0 0 14 20"><path d="M3 3 L11 10 L3 17" fill="none" stroke="#0E2350" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>  </div>
+
+  <div class="linen-card abs" style="left:14px;top:516px;width:362px;padding:18px;z-index:6;">
+    <div class="t-small" style="font-size:16px;">Reset the whole farm</div>
+    <div class="t-micro" style="color:#3C5688;font-size:10px;margin-top:6px;line-height:1.7;">Clears 36 fields, every ribbon and the almanac,<br>then walks you back through the tour.</div>
+    <div class="row" style="margin-top:14px;padding:14px;border-radius:12px;background:#D9342B;border:3px solid #0E2350;box-shadow:0 6px 0 #8C1C16;justify-content:center;">
+      <span class="t-micro" style="color:#FFF6E4;font-size:13px;">Reset progress</span>
+    </div>
+  </div>
+
+  <div class="abs" style="left:118px;top:760px;width:258px;text-align:center;z-index:7;">
+    <span class="pill-sky t-micro" style="font-size:10px;">MillFling 1.0 · plays offline, always</span>
+  </div>
+  <div class="abs" style="left:0;top:0;width:390px;z-index:9;"><div class="stitch-band"></div></div>
+  <div class="vignette" style="z-index:8;"></div>
+</div></body></html>
