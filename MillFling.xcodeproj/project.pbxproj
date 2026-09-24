@@ -19,7 +19,6 @@
 		2CD66D205E9F3F72CDE2541E /* RibbonCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E285BFBA19259CD3B2DCE /* RibbonCatalog.swift */; };
 		313B54848A8022099B94486F /* ChaffField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4796A8E6062ACDA9AA07DAF3 /* ChaffField.swift */; };
 		376342E3097E6450F1CE0711 /* ScoreRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A1F633AEEF0CD6B7004CC7 /* ScoreRules.swift */; };
-		395B97C64736C77F329FC6EE /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = E90A09DE336888C2DCA9A21F /* AppsFlyerLib */; };
 		3BA27A213494109D69E8F3DF /* SceneColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE4197FF72D9CDB6EB2377 /* SceneColors.swift */; };
 		3E88E3F07801F4E7CEE14991 /* SeedCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB72D5CBB3CA7790E7222A /* SeedCatalog.swift */; };
 		3FF055D632C97FDB50AD9D50 /* SeededRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FADCC9D4F15BC27150FAE53 /* SeededRandom.swift */; };
@@ -62,7 +61,6 @@
 		EF0A7DDF00A1FA318B2753FD /* FieldCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45284BC7281CE195590EA6F6 /* FieldCatalog.swift */; };
 		F068ADFC5BD8FC91BE90270B /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74984253DA2E0E7BD1D2CF57 /* PersistenceController.swift */; };
 		F27DD20584B995F2E8BD42F5 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFD0B7850E3116F16A97B00 /* GameState.swift */; };
-		F6788B5CBB5D89ECEB432B57 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 0C59768B33971D21B4132B57 /* OneSignalFramework */; };
 		F92EC902B89ABE2DFA085DB6 /* GameContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EAE55D017F501A3E857A4B /* GameContainerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +83,7 @@
 		3FFD0B7850E3116F16A97B00 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		41A1F633AEEF0CD6B7004CC7 /* ScoreRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRules.swift; sourceTree = "<group>"; };
 		45284BC7281CE195590EA6F6 /* FieldCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCatalog.swift; sourceTree = "<group>"; };
-		46376E738EF61D38C8CD4EB7 /* MillFling.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MillFling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46376E738EF61D38C8CD4EB7 /* MillFling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MillFling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4796A8E6062ACDA9AA07DAF3 /* ChaffField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaffField.swift; sourceTree = "<group>"; };
 		484ECC39A0E8EAEBC75DF7F0 /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		4AC8BB627EED24A155334699 /* HarvestReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestReportView.swift; sourceTree = "<group>"; };
@@ -131,8 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				395B97C64736C77F329FC6EE /* AppsFlyerLib in Frameworks */,
-				F6788B5CBB5D89ECEB432B57 /* OneSignalFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,8 +310,6 @@
 			);
 			name = MillFling;
 			packageProductDependencies = (
-				E90A09DE336888C2DCA9A21F /* AppsFlyerLib */,
-				0C59768B33971D21B4132B57 /* OneSignalFramework */,
 			);
 			productName = MillFling;
 			productReference = 46376E738EF61D38C8CD4EB7 /* MillFling.app */;
@@ -345,8 +339,6 @@
 			mainGroup = 8A4F20BB1FBBF0FA733C38C8;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				7870C6F10DA8E4153DFE8FE8 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
-				C467CC958635BDC82884DD23 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C848956FA3DA08C934F9D0A4 /* Products */;
@@ -460,6 +452,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.millfling;
 				PRODUCT_NAME = MillFling;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -610,6 +606,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.millfling;
 				PRODUCT_NAME = MillFling;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -637,38 +637,6 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7870C6F10DA8E4153DFE8FE8 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.15.0;
-			};
-		};
-		C467CC958635BDC82884DD23 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0C59768B33971D21B4132B57 /* OneSignalFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C467CC958635BDC82884DD23 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignalFramework;
-		};
-		E90A09DE336888C2DCA9A21F /* AppsFlyerLib */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7870C6F10DA8E4153DFE8FE8 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
-			productName = AppsFlyerLib;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		36A5AA7120A322B9ED2CF3E0 /* MillFling.xcdatamodeld */ = {
